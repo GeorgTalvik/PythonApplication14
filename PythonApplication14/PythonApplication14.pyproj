@@ -29,6 +29,8 @@
     <Content Include="pc3.png" />
     <Content Include="pc4.png" />
     <Content Include="pc5.png" />
+    <Content Include="pc6.jpg" />
+    <Content Include="pc7.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

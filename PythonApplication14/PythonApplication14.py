@@ -1,6 +1,6 @@
 from tkinter import *
-foto_list=["pc1.png","pc2.png","pc3.png","pc4.png","pc5.png"]
-ttt="ttt"
+foto_list=["pc1.png","pc2.png","pc3.png","pc4.png","pc5.png",'pc6.png','pc7.png']
+ttt="фото компьютеров"
 list_ = ["Компьютер1","Компьютер2","Компьютер3","Компьютер4","Компьютер5"]
 def list_to_txt(event):
     global can,foto
@@ -32,9 +32,9 @@ def opisanie():
         ttt="компьтер игровой имеет видео карту ртх 3090, процессор i9, 32гб оперативной памяти ddr4, стоит он 2000 евро."
     elif text=="Компьютер1 \n":
         ttt=" игровой компьютер он имеет core i5, 16гб оперативной памяти, 500w, 1050 видеокарта "
-    elif text=="Компьютер4\n":
+    elif text=="Компьютер4":
         ttt="компьютер стоит 900 евро он игровой "
-    elif text=="Компьютер3\n":
+    elif text=="Компьютер3":
         ttt="Компьютер имеет core i5 видеокарту 1050, 16 гб оперативной памяти, компьютер стоит 500 евро."
     else:
         ttt="Компьютер"
@@ -43,32 +43,38 @@ def opisanie():
 
 
 win=Tk()
-win.geometry("600x700")
-win.title("Проверочная работа")
+win.geometry("1080x1080")
+win.title("Компьютеры")
 lbox=Listbox(win,width=25,height=7,selectmode=SINGLE)
 lbox.insert(1, "Компьютер1 ")
 lbox.insert(2, "Компьютер2")
 lbox.insert(3, "Компьютер3")
 lbox.insert(4, "Компьютер4")
 lbox.insert(5, "Компьютер5")
+lbox.insert(6, "Компьютер6")
+lbox.insert(7, "Компьютер7")
 for element in foto_list:
     lbox.insert(END,element)
 
 lbox.grid(row=0,column=0)
 lbox.bind("<<ListboxSelect>>",list_to_txt)
-txt=Text(win,height=4,width=20,wrap=WORD)
-txt.grid(row=1,column=1)
+txt=Text(win,height=10,width=15,wrap=WORD)
+txt.grid(row=3,column=3)
 txt.bind("<Return>",txt_to_list)
 can=Canvas(win,width=400,height=400,bg="gold")
-can.grid(row=1,column=2,columnspan=2)
+can.grid(row=1,column=1,columnspan=1)
 pc = PhotoImage(file="")#220px-PelobatesFuscus.png
 panel = Label(win, image = pc)
-panel.grid(row=1, column=3)
+panel.grid(row=5, column=3)
 foto=PhotoImage(file="pc3.png")
 btn=Button(text='Информация ', command=opisanie)
 btn.grid(row=1, column=2)
-opis=Label(win, text="", width=60, height=30)
-opis.grid(row=5, column=6)
+opis=Label(win, text="", width=10, height=10)
+opis.grid(row=20, column=6)
 can.grid(row=4, column=6)
+
+
+
+
+
 win.mainloop()
-ttt.grid(row=5)
